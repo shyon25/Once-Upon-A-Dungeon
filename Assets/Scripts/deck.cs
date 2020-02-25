@@ -15,6 +15,11 @@ public class deck : MonoBehaviour
         DontDestroyOnLoad(this);
     }
 
+    void Update()
+    {
+        decklist.Sort();
+    }
+
     void Intodeck(int a)
     {
         decklist.Add(a);
