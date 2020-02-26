@@ -1449,12 +1449,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carddata:
-    name: 
-    type: 0
-    atk: 0
-    hp: 0
+    name: "\uC120\uD608\uC758 \uAE30\uC0AC \uB808\uBBF8\uB2C8\uC2A4 \uB4DC \uB808\uB4DC\uC2A4\uD14C\uC778"
+    type: 3
+    atk: 3
+    hp: 7
     cost: 0
-    effect: 
+    effect: "\uACF5\uACA9\uD6C4, \uACF5\uACA9\uC5D0 \uC131\uACF5\uD588\uB2E4\uBA74
+      \uCCB4\uB825\uC744 1 \uAC10\uC18C\uC2DC\uD0A4\uACE0 \uD55C\uBC88 \uB354 \uACF5\uACA9\uD560
+      \uC218 \uC788\uB2E4."
+  number: 0
 --- !u!114 &1604524910
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,26 +4,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public enum Type { MERCENARY, SPELL, ITEM }
+public enum Type { MERCENARY, SPELL, ITEM, CHARACTER }
 
 public class showyourCard : MonoBehaviour
 {
     public carddata Carddata;
+    public int number;
+
+    [ContextMenu("To json file")]
+    void SaveCardDataTojson()
+    {
+        string jsonData = JsonUtility.ToJson(Carddata);
+        string path = Path.Combine(Application.dataPath, "card_" + number);
+        File.WriteAllText(path, jsonData);
+    }
 
     [ContextMenu("From json data")]
-    public void LoadCardDataFromjson(int number)
+    void LoadCardDataFromjson()
     {
         string path = Path.Combine(Application.dataPath, "card_" + number);
         string jsonData = File.ReadAllText(path);
         Carddata = JsonUtility.FromJson<carddata>(jsonData);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     
 }
 [System.Serializable]
