@@ -5,7 +5,7 @@ using UnityEngine;
 public class deck : MonoBehaviour
 {
     public List<int> decklist;
-
+    public int slot = 8;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,12 @@ public class deck : MonoBehaviour
         decklist.Sort();
     }
 
-    void Intodeck(int a)
+    public void Intodeck(int a)
     {
         decklist.Add(a);
     }
 
-    void Getoutfromdeck(int a)
+    public void Getoutfromdeck(int a)
     {
         decklist.Remove(a);
     }

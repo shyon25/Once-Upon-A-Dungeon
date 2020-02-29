@@ -10,6 +10,15 @@ public class showyourCard : MonoBehaviour
 {
     public carddata Carddata;
     public int number;
+    Text theText;
+
+    private void Update()
+    {
+        if (WhatIsMyPlace() > GameObject.Find("Deck").GetComponent<deck>().decklist.Count)
+            CleanName();
+        else
+            CanIShowMyCard();
+    }
 
     [ContextMenu("To json file")]
     void SaveCardDataTojson()
@@ -25,6 +34,25 @@ public class showyourCard : MonoBehaviour
         string path = Path.Combine(Application.dataPath, "card_" + number);
         string jsonData = File.ReadAllText(path);
         Carddata = JsonUtility.FromJson<carddata>(jsonData);
+    }
+    
+    void CanIShowMyCard()
+    {
+        theText = this.transform.GetChild(0).GetComponent<Text>();
+        int mynumber = WhatIsMyPlace() + GameObject.Find("Cardlist Logo").GetComponent<showyourdecklist>().how_many_down;
+        number = GameObject.Find("Deck").GetComponent<deck>().decklist[mynumber - 1];
+        LoadCardDataFromjson();
+        theText.text = Carddata.cost.ToString() + " " + Carddata.name;
+    }
+
+    int WhatIsMyPlace()
+    {
+        return int.Parse(this.name.Substring(8,1));
+    }
+    void CleanName()
+    {
+        Text empty = this.transform.GetChild(0).GetComponent<Text>();
+        empty.text = "";
     }
     
 }
