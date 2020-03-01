@@ -45,7 +45,7 @@ public class showyourCard : MonoBehaviour
         theText.text = Carddata.cost.ToString() + " " + Carddata.name;
     }
 
-    int WhatIsMyPlace()
+    public int WhatIsMyPlace()
     {
         return int.Parse(this.name.Substring(8,1));
     }

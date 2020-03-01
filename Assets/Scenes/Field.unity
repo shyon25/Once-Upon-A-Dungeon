@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1 &150217234
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &291426681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1 &322465347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1221,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
+--- !u!114 &403740525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6290170540277340099, guid: bc7188136f75490468cf10fd2402085a,
+    type: 3}
+  m_PrefabInstance: {fileID: 990660406189336808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438503543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,7 +1644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &906563479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1861,7 +1873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1 &1068172683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,7 +1893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1068172684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2426,7 +2438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1 &1514932672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2690,7 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 767045208}
+  thisimage: {fileID: 403740525}
 --- !u!1 &1646447083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1 &1926656062
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,7 +3230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
-  mainCamera: {fileID: 0}
+  thisimage: {fileID: 403740525}
 --- !u!1001 &990660406189336808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3294,7 +3306,7 @@ PrefabInstance:
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
@@ -3304,7 +3316,7 @@ PrefabInstance:
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -240
+      value: -140
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
@@ -3319,7 +3331,7 @@ PrefabInstance:
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.85
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
@@ -3338,7 +3350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6290170540277340099, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
-      propertyPath: m_RaycastTarget
+      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
