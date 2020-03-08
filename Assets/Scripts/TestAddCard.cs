@@ -17,4 +17,14 @@ public class TestAddCard : MonoBehaviour
     {
         GameObject.Find("Deck").GetComponent<deck>().Getoutfromdeck(21);
     }
+    public void testIncrease()
+    {
+        GameObject.Find("Face").GetComponent<whoandwhere>().upFloor();
+        GameObject.Find("Face").GetComponent<whoandwhere>().heal(1);
+    }
+    public void testDecrease()
+    {
+        GameObject.Find("Face").GetComponent<whoandwhere>().downFloor();
+        GameObject.Find("Face").GetComponent<whoandwhere>().damage(1);
+    }
 }
