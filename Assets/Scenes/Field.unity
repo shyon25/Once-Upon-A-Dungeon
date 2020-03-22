@@ -154,7 +154,7 @@ RectTransform:
   m_Children:
   - {fileID: 1690920900}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.4}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -260,7 +260,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.93, y: 0}
   m_AnchorMax: {x: 1, y: 0.1}
@@ -388,7 +388,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.93, y: 0.9}
   m_AnchorMax: {x: 1, y: 1}
@@ -662,9 +662,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &250343423
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,9 +761,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &277663776
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +805,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -856,7 +878,7 @@ RectTransform:
   m_Children:
   - {fileID: 322465348}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1141,7 +1163,7 @@ RectTransform:
   m_Children:
   - {fileID: 775282368}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.1}
   m_AnchorMax: {x: 1, y: 0.2}
@@ -1326,7 +1348,7 @@ RectTransform:
   m_Children:
   - {fileID: 2093902669}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.2}
   m_AnchorMax: {x: 1, y: 0.3}
@@ -1652,9 +1674,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &515117278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1817,9 +1850,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &609856624
 GameObject:
   m_ObjectHideFlags: 0
@@ -1905,9 +1949,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &762026117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,9 +2048,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &767045206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,7 +2332,7 @@ RectTransform:
   m_Children:
   - {fileID: 1547808068}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2408,7 +2474,7 @@ RectTransform:
   m_Children:
   - {fileID: 298457095}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.3}
   m_AnchorMax: {x: 1, y: 0.4}
@@ -2645,9 +2711,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1066632447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2758,7 @@ RectTransform:
   m_Children:
   - {fileID: 790224817}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2823,7 +2900,7 @@ RectTransform:
   m_Children:
   - {fileID: 1184458985}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3017,9 +3094,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1125607339
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,7 +3155,7 @@ RectTransform:
   - {fileID: 600738201}
   - {fileID: 1646986398}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25, y: 0.05}
   m_AnchorMax: {x: 0.75, y: 0.9}
@@ -3244,9 +3332,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1162009185
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,7 +3600,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.85, y: 0}
   m_AnchorMax: {x: 0.95, y: 0.1}
@@ -3579,7 +3678,7 @@ RectTransform:
   m_Children:
   - {fileID: 1021351512}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.2, y: 0.5}
@@ -3728,7 +3827,7 @@ RectTransform:
   m_Children:
   - {fileID: 515117279}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.9}
   m_AnchorMax: {x: 1, y: 1}
@@ -3866,9 +3965,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1325097677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3902,7 +4012,7 @@ RectTransform:
   m_Children:
   - {fileID: 1162009186}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.7}
   m_AnchorMax: {x: 1, y: 0.8}
@@ -4062,9 +4172,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1377171578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4098,7 +4219,7 @@ RectTransform:
   m_Children:
   - {fileID: 1968626294}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4292,9 +4413,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1409913771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4326,7 +4458,7 @@ RectTransform:
   m_Children:
   - {fileID: 1259589985}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4, y: 0.9}
   m_AnchorMax: {x: 0.6, y: 1}
@@ -4630,7 +4762,7 @@ RectTransform:
   m_Children:
   - {fileID: 1514932673}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.8}
   m_AnchorMax: {x: 1, y: 0.9}
@@ -4650,16 +4782,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carddata:
-    name: "\uC775\uC2DC\uB4DC"
+    name: "\uC6CC \uD504\uB810\uB958\uB4DC"
     type: 2
     atk: 3
-    hp: 1
-    cost: 4
-    effect: "\uB0B4 \uBAA8\uB4E0 \uCE74\uB4DC\uC758 \uBC29\uC5B4\uC804 \uB2A5\uB825\uC740
-      \uACF5\uACA9\uC804\uC5D0\uB3C4 \uBC1C\uB3D9\uD560 \uC218 \uC788\uB2E4. (\uC774\uB54C
-      '\uACF5\uACA9\uD55C \uC0C1\uB300'\uB97C '\uACF5\uACA9\uB300\uC0C1'\uC73C\uB85C
-      \uCDE8\uAE09\uD55C\uB2E4.)"
-  number: 15
+    hp: 3
+    cost: 3
+    effect: "\uB0B4 \uBAA8\uB4E0 \uC6A9\uBCD1, \uC544\uC774\uD15C\uCE74\uB4DC\uC758
+      \uC704\uB825, \uCCB4\uB825, \uC601\uC591\uC774 1 \uC99D\uAC00\uD55C\uB2E4.
+      \uB0B4 \uCE90\uB9AD\uD130\uCE74\uB4DC\uC758 \uC704\uB825\uC774 1 \uC99D\uAC00\uD55C\uB2E4."
+  number: 71
 --- !u!114 &1604524910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4739,6 +4870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   decklist: 
   slot: 8
+  bosslist: 
+  additionalDecklist: 
+  how_many_draw: 0
 --- !u!4 &1646447085
 Transform:
   m_ObjectHideFlags: 0
@@ -4838,9 +4972,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1690920899
 GameObject:
   m_ObjectHideFlags: 0
@@ -5003,9 +5148,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1910590110
 GameObject:
   m_ObjectHideFlags: 0
@@ -5039,7 +5195,7 @@ RectTransform:
   m_Children:
   - {fileID: 467378265}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.6}
@@ -5205,6 +5361,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 990660406189336809}
+  - {fileID: 6462629807183044549}
   - {fileID: 277663777}
   - {fileID: 1290403953}
   - {fileID: 1604524908}
@@ -5345,7 +5502,7 @@ RectTransform:
   m_Children:
   - {fileID: 1439087188}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6}
   m_AnchorMax: {x: 0.2, y: 1}
@@ -5377,6 +5534,8 @@ MonoBehaviour:
   face_violet: {fileID: 2800000, guid: ad4a1a1a71459294d8ba4185fa25d8d6, type: 3}
   number: 0
   currentHP: 0
+  selectingTime: 0
+  whatiselect: 0
 --- !u!114 &1995325226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5510,9 +5669,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &2093902668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5675,9 +5845,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  currentSelection: 
+  first: 0
+  second: 0
+  third: 0
   FieldData:
     name: 
     text: 
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &2129857854
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,7 +5892,7 @@ RectTransform:
   m_Children:
   - {fileID: 438503544}
   m_Father: {fileID: 1926656066}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8, y: 0.6}
   m_AnchorMax: {x: 1, y: 0.7}
@@ -5871,22 +6052,22 @@ PrefabInstance:
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -10
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
         type: 3}
@@ -5920,4 +6101,129 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5319070676346110878, guid: bc7188136f75490468cf10fd2402085a,
     type: 3}
   m_PrefabInstance: {fileID: 990660406189336808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6462629807183044548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1926656066}
+    m_Modifications:
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182399145049743018, guid: d539a9c7519ecdc418237f24aa77b2ad,
+        type: 3}
+      propertyPath: m_Name
+      value: SelectOne
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d539a9c7519ecdc418237f24aa77b2ad, type: 3}
+--- !u!224 &6462629807183044549 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 172433365815628734, guid: d539a9c7519ecdc418237f24aa77b2ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 6462629807183044548}
   m_PrefabAsset: {fileID: 0}

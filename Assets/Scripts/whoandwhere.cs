@@ -16,12 +16,17 @@ public class whoandwhere : MonoBehaviour
     public int number;
     public int currentHP;
 
+    public bool selectingTime;
+    public int whatiselect;
+
     void Start()
     {
         whoami();
         currentHP = Carddata.hp;
         setMyHp();
         setFloor(1);
+        selectingTime = false;
+        whatiselect = -1;
     }
 
     void Update()
