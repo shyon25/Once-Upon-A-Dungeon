@@ -13,16 +13,16 @@ public class eachFieldcards : MonoBehaviour
 {
     public int thisfield;
     public bool isThischecked;
-    public List<int> currentSelection;
-
-    public int first, second, third; //for selection
+    public bool dreaming;
+    public bool sunset;
 
     public fieldData FieldData;
     public carddata Carddata;
     void Start()
     {
         isThischecked = false;
-        currentSelection = new List<int>();
+        dreaming = false;
+        sunset = false;
         Carddata = new carddata();
         CoverYourField();
     }
@@ -45,7 +45,7 @@ public class eachFieldcards : MonoBehaviour
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(isThischecked == true)
+        if(isThischecked == true || sunset == true)
             ShowYourField();
     }
     public void OnPointerExit(PointerEventData eventData)
@@ -104,7 +104,6 @@ public class eachFieldcards : MonoBehaviour
         here = itsnumber();
         GameObject.Find("EmptyField").GetComponent<fieldcards>().changePos(here);
         GameObject.Find("EmptyField").GetComponent<fieldcards>().characterPosChange();
-        
     }
 
     int itsnumber()
@@ -121,43 +120,53 @@ public class eachFieldcards : MonoBehaviour
     {
         switch(thisfield)
         {
-            case 0: 
+            case 0: //시작
             case 1:
-            case 2: break;
+            case 2: break;//텅빈
             case 3:
             case 4:
-            case 5: 
+            case 5://보물상자
+                abandonCard();
                 selectCard();
-                //abandonCard();
                 break;
-            case 6:
+            case 6://모닥불
                 healed(GameObject.Find("Face").GetComponent<whoandwhere>().Carddata.hp);
+                abandonCard();
                 break;
-            case 7:
+            case 7://영사실
                 damaged(GameObject.Find("Face").GetComponent<whoandwhere>().currentHP/2);
                 break;
             case 8:
-            case 9:
+            case 9://황야
                 selectCard();
                 break;
-            case 10:
+            case 10://가시덤불
                 damaged(1);
                 break;
-            case 11:
+            case 11://샘물
                 healed(2);
                 break;
-            case 12:
+            case 12://진실의 방
                 roomOfTruth();
                 break;
-            case 13:
+            case 13://보스
                 boss();
                 break;
-            case 21:
-            case 22:
-            case 23:
-            case 24:
-            case 25:
-            case 26:
+            case 21://꿈속의 바다
+                oceanOfDream();
+                break;
+            case 22://별빛 정원
+                starryGarden();
+                break;
+            case 23://노을색 들판
+                sunsetField();
+                break;
+            case 24://어두운 숲
+                darkForest();
+                break;
+            case 25://깊고 어두운 환상
+                break;
+            case 26://검은 방
                 break;
             default:
                 break; 
@@ -166,71 +175,49 @@ public class eachFieldcards : MonoBehaviour
 
     void selectCard()
     {
-        int iSelected = 0;
-        iSelected = prepareYourSelection();
-        GameObject.Find("Deck").GetComponent<deck>().Intodeck(iSelected);
-    }
-    int prepareYourSelection()
-    {
-        int final = -1;
-        int result = -1;
         GameObject.Find("Face").GetComponent<whoandwhere>().selectingTime = true;
-
-        first = setName(0);
-        second = setName(1);
-        third = setName(2);
+        
+        GameObject.Find("Face").GetComponent<whoandwhere>().first = setNameToSelect(0);
+        GameObject.Find("Face").GetComponent<whoandwhere>().second = setNameToSelect(1);
+        GameObject.Find("Face").GetComponent<whoandwhere>().third = setNameToSelect(2);
 
         GameObject.Find("SelectOne").transform.SetAsLastSibling();
-        result = selectionCheck();
-        switch (result)
-        {
-            case 1: final = first; break;
-            case 2: final = second; break;
-            case 3: final = third; break;
-        }
-        GameObject.Find("Face").GetComponent<whoandwhere>().whatiselect = -1;
-        GameObject.Find("SelectOne").transform.SetAsFirstSibling();
-
-        return final;
     }
-    int setName(int num)
+    int setNameToSelect(int num)
     {
-        int st;
-        Text text;
-        st = GameObject.Find("Deck").GetComponent<deck>().additionalDecklist[num];
-        LoadCardDataFromjson(Carddata, st);
-        text = GameObject.Find("selectFirst").transform.GetChild(0).GetComponent<Text>();
+        int st = GameObject.Find("Deck").GetComponent<deck>().additionalDecklist[num];
+        LoadCardDataFromjson(st);
+        Text text = GameObject.Find("SelectOne").transform.GetChild(num).GetChild(0).GetComponent<Text>();
         text.text = Carddata.name;
         return st;
     }
-    int selectionCheck()
+    void LoadCardDataFromjson(int number)
     {
-        int result = -1;
-        StartCoroutine(letsCheck());
-        
-        result = GameObject.Find("Face").GetComponent<whoandwhere>().whatiselect;
-        StopCoroutine(letsCheck());
-
-        return result;
-    }
-    IEnumerator letsCheck()
-    {
-        int result = -1;
-        while (result == -1)
-        {
-            result = GameObject.Find("Face").GetComponent<whoandwhere>().whatiselect;
-            yield return new WaitForSeconds(.1f);
-        }
+        string path = Path.Combine(Application.dataPath, "card_" + number);
+        string jsonData = File.ReadAllText(path);
+        Carddata = JsonUtility.FromJson<carddata>(jsonData);
     }
 
     void abandonCard()
     {
-        GameObject.Find("Deck").GetComponent<deck>().Getoutfromdeck(28);
+        GameObject.Find("Face").GetComponent<whoandwhere>().selectingTime = true;
+        for(int i = 0; i<9; i++)
+            setNameToAbandon(i);
+        GameObject.Find("TrashOne").transform.SetAsLastSibling();
+    }
+    int setNameToAbandon(int num)
+    {
+        int st = GameObject.Find("Deck").GetComponent<deck>().decklist[num];
+        LoadCardDataFromjson(st);
+        Text text = GameObject.Find("TrashOne").transform.GetChild(num).GetChild(0).GetComponent<Text>();
+        text.text = Carddata.name;
+        return st;
     }
 
     void damaged(int a)
     {
-        GameObject.Find("Face").GetComponent<whoandwhere>().damage(a);
+        if(dreaming == false && GameObject.Find("Face").GetComponent<whoandwhere>().thefloor == 1)
+            GameObject.Find("Face").GetComponent<whoandwhere>().damage(a);
     }
 
     void healed(int a)
@@ -260,11 +247,24 @@ public class eachFieldcards : MonoBehaviour
         //SceneManager.LoadScene(3);
     }
 
-    void LoadCardDataFromjson(carddata Carddata, int number)
+    void oceanOfDream()
     {
-        string path = Path.Combine(Application.dataPath, "card_" + number);
-        string jsonData = File.ReadAllText(path);
-        Carddata = JsonUtility.FromJson<carddata>(jsonData);
+        dreaming = true;
     }
+    void starryGarden()
+    {
+        abandonCard();
+        GameObject.Find("Deck").GetComponent<deck>().Intodeck(Random.Range(50,76));
+    }
+    void sunsetField()
+    {
+        int playerpoint = GameObject.Find("EmptyField").GetComponent<fieldcards>().playerHere;
+        for (int i = 0; i < 16; i++)
+            if (isThischikai(playerpoint, i))
+                GameObject.Find("EmptyField").transform.GetChild(i).GetComponent<eachFieldcards>().sunset = true;
+    }
+    void darkForest()
+    {
 
+    }
 }

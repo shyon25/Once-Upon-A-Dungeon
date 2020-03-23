@@ -16,8 +16,9 @@ public class whoandwhere : MonoBehaviour
     public int number;
     public int currentHP;
 
+    public int first, second, third; //for selection
+
     public bool selectingTime;
-    public int whatiselect;
 
     void Start()
     {
@@ -26,7 +27,6 @@ public class whoandwhere : MonoBehaviour
         setMyHp();
         setFloor(1);
         selectingTime = false;
-        whatiselect = -1;
     }
 
     void Update()

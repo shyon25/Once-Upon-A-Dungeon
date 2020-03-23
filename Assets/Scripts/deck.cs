@@ -8,7 +8,7 @@ public class deck : MonoBehaviour
     public int slot = 8;
     public List<int> bosslist;
     public List<int> additionalDecklist;
-    public int how_many_draw;
+    public List<int> bossDecklist;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +16,12 @@ public class deck : MonoBehaviour
         decklist = new List<int>();
         bosslist = new List<int>();
         additionalDecklist = new List<int>();
+        bossDecklist = new List<int>();
         initialdeck();
         initialboss();
         initialadd();
-        how_many_draw = 0;
-        
+        initialbossdeck();
+
         DontDestroyOnLoad(this);
     }
 
@@ -32,11 +33,13 @@ public class deck : MonoBehaviour
     public void Intodeck(int a)
     {
         decklist.Add(a);
+        GameObject.Find("Cardlist Logo").GetComponent<showyourdecklist>().how_many_down = 0;
     }
 
     public void Getoutfromdeck(int a)
     {
         decklist.Remove(a);
+        GameObject.Find("Cardlist Logo").GetComponent<showyourdecklist>().how_many_down = 0;
     }
 
     void initialdeck()
@@ -69,10 +72,10 @@ public class deck : MonoBehaviour
     void initialboss()
     {
         bosslist.Add(1);
-        while(bosslist.Count < 5)
+        while (bosslist.Count < 5)
         {
-            int rand = Random.Range(2,6);
-            if(!bosslist.Contains(rand))
+            int rand = Random.Range(2, 6);
+            if (!bosslist.Contains(rand))
                 bosslist.Add(rand);
         }
         bosslist.Add(6);
@@ -81,9 +84,15 @@ public class deck : MonoBehaviour
     {
         for (int i = 50; i < 75; i++)
         {
-            for(int j = 0; j < 5; j++)
+            for (int j = 0; j < 5; j++)
                 additionalDecklist.Add(i);
         }
+        uniquecard();
+        shuffle(additionalDecklist);
+
+    }
+    void uniquecard()
+    {
         additionalDecklist.Remove(51);
         additionalDecklist.Remove(51);
         additionalDecklist.Remove(53);
@@ -94,8 +103,6 @@ public class deck : MonoBehaviour
         additionalDecklist.Remove(59);
         additionalDecklist.Remove(59);
         additionalDecklist.Remove(59);
-
-
         additionalDecklist.Remove(60);
         additionalDecklist.Remove(60);
         additionalDecklist.Remove(60);
@@ -106,8 +113,6 @@ public class deck : MonoBehaviour
         additionalDecklist.Remove(69);
         additionalDecklist.Remove(69);
         additionalDecklist.Remove(69);
-
-
         additionalDecklist.Remove(70);
         additionalDecklist.Remove(71);
         additionalDecklist.Remove(72);
@@ -115,9 +120,6 @@ public class deck : MonoBehaviour
         additionalDecklist.Remove(74);
         additionalDecklist.Remove(74);
         additionalDecklist.Add(75);
-
-        shuffle(additionalDecklist);
-        
     }
     void shuffle(List<int> list)
     {
@@ -133,5 +135,9 @@ public class deck : MonoBehaviour
                 
             shuffling--;
         }
+    }
+    void initialbossdeck()
+    {
+
     }
 }
