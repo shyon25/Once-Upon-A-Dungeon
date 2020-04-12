@@ -20,19 +20,31 @@ public class whoandwhere : MonoBehaviour
 
     public bool selectingTime;
 
+    public bool battleTime;
+
+    private static whoandwhere instance = null;
+
     void Start()
     {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
         whoami();
         currentHP = Carddata.hp;
+        selectingTime = false;
         setMyHp();
         setFloor(1);
-        selectingTime = false;
+        battleTime = false;
+
+        instance = this;
+        DontDestroyOnLoad(this);
     }
 
     void Update()
     {
-        setFloor(thefloor);
-        setMyHp();
+        
     }
 
     
@@ -42,27 +54,27 @@ public class whoandwhere : MonoBehaviour
         {
             case selectCharacter.Character.Rem:
                 number = 0;
-                this.GetComponent<RawImage>().texture = face_rem;
+                GameObject.Find("Face").GetComponent<RawImage>().texture = face_rem;
                 break;
             case selectCharacter.Character.Gae:
-                this.GetComponent<RawImage>().texture = face_gae;
+                GameObject.Find("Face").GetComponent<RawImage>().texture = face_gae;
                 number = 4;
                 break;
             case selectCharacter.Character.Violet:
-                this.GetComponent<RawImage>().texture = face_violet;
+                GameObject.Find("Face").GetComponent<RawImage>().texture = face_violet;
                 number = 5;
                 break;
         }
         LoadCardDataFromjson();
     }
 
-    void setMyHp()
+    public void setMyHp()
     {
-        Text HP = this.transform.GetChild(0).GetComponent<Text>();
+        Text HP = GameObject.Find("Face").transform.GetChild(0).GetComponent<Text>();
         HP.text = currentHP + " / " + Carddata.hp;
     }
 
-    void setFloor(int floor)
+    public void setFloor(int floor)
     {
         thefloor = floor;
         Text floorText = GameObject.Find("floor").transform.GetChild(0).GetComponent<Text>();

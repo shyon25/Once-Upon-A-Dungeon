@@ -29,7 +29,8 @@ public class showyourCardSeriously : MonoBehaviour
     
     public void OnPointerExit(PointerEventData eventData)
     {
-        coverthisCard();
+        if(isThisACard())
+            coverthisCard();
     }
 
     void showthisCard()

@@ -21,6 +21,14 @@ public class showyourCharacterSeriously : MonoBehaviour
             information[i].text = "";
         }
     }
+    void Update()
+    {
+        if (GameObject.Find("Deck").GetComponent<whoandwhere>().battleTime == false)
+        {
+            GameObject.Find("Deck").GetComponent<whoandwhere>().setFloor(GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor);
+            GameObject.Find("Deck").GetComponent<whoandwhere>().setMyHp();
+        }
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -39,10 +47,10 @@ public class showyourCharacterSeriously : MonoBehaviour
         for (int i = 0; i < numberOfComponent; i++) // cost, name, atk, hp, effect
             information.Add(GameObject.Find("WhatCard").transform.GetChild(i).GetComponent<Text>());
         information[0].text = "";
-        information[1].text = this.GetComponent<whoandwhere>().Carddata.name.ToString();
-        information[2].text = "위력 " + this.GetComponent<whoandwhere>().Carddata.atk.ToString();
-        information[3].text = "체력 " + this.GetComponent<whoandwhere>().Carddata.hp.ToString();
-        information[4].text = this.GetComponent<whoandwhere>().Carddata.effect.ToString();
+        information[1].text = GameObject.Find("Deck").GetComponent<whoandwhere>().Carddata.name.ToString();
+        information[2].text = "위력 " + GameObject.Find("Deck").GetComponent<whoandwhere>().Carddata.atk.ToString();
+        information[3].text = "체력 " + GameObject.Find("Deck").GetComponent<whoandwhere>().Carddata.hp.ToString();
+        information[4].text = GameObject.Find("Deck").GetComponent<whoandwhere>().Carddata.effect.ToString();
     }
 
     void coverthisCard()

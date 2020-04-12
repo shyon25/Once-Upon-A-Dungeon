@@ -20,9 +20,12 @@ public class selectToAbandon : MonoBehaviour
             int howmany = GameObject.Find("TrashOne").GetComponent<updownTrashlist>().how_many_down * slot;
             trashcard = GameObject.Find("Deck").GetComponent<deck>().decklist[howmany + myname - 1];
             GameObject.Find("Deck").GetComponent<deck>().Getoutfromdeck(trashcard);
-            GameObject.Find("Face").GetComponent<whoandwhere>().selectingTime = false;
+            GameObject.Find("Deck").GetComponent<whoandwhere>().selectingTime = false;
             GameObject.Find("TrashOne").transform.SetAsFirstSibling();
+            GameObject.Find("TrashOne").transform.GetChild(11).gameObject.SetActive(true);
         }
+        if(GameObject.Find("EmptyField").GetComponent<fieldcards>().secondChance == true)
+            secondChance();
     }
     bool canidoit(int name)
     {
@@ -31,7 +34,14 @@ public class selectToAbandon : MonoBehaviour
 
     public void doCancel()
     {
-        GameObject.Find("Face").GetComponent<whoandwhere>().selectingTime = false;
+        GameObject.Find("Deck").GetComponent<whoandwhere>().selectingTime = false;
         GameObject.Find("TrashOne").transform.SetAsFirstSibling();
+    }
+    void secondChance()
+    {
+        GameObject.Find("TrashOne").transform.GetChild(11).gameObject.SetActive(false);
+        GameObject.Find("EmptyField").GetComponent<fieldcards>().secondChance = false;
+        int playerHere = GameObject.Find("EmptyField").GetComponent<fieldcards>().playerHere;
+        GameObject.Find("EmptyField").transform.GetChild(playerHere).GetComponent<eachFieldcards>().abandonCard();
     }
 }

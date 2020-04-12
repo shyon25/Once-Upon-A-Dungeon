@@ -17,10 +17,15 @@ public class fieldcards : MonoBehaviour
 
     public List<Texture> fieldImages = new List<Texture>(26);
 
+    public bool secondChance;
+    public bool dreaming;
+
     void Start()
     {
         youcanMove = true;
         didyouchecklevel = false;
+        secondChance = false;
+        dreaming = false;
     }
     
     void Update()
@@ -54,7 +59,7 @@ public class fieldcards : MonoBehaviour
             if(number == 0)
                 playerHere = i;
             else if(number == 14 || number == 15)
-                number = 20 + GameObject.Find("Face").GetComponent<whoandwhere>().thefloor;
+                number = 20 + GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor;
             LoadCardDataFromjson();
             fieldData temp = new fieldData();
             temp.name = FieldData.name;

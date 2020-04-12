@@ -662,6 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -757,6 +758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -1666,6 +1668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -1838,6 +1841,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -1933,6 +1937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -2028,6 +2033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -2687,6 +2693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -3066,6 +3073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -3214,6 +3222,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: eea2c9a8a00561845be1f10b83482a53, type: 3}
   - {fileID: 2800000, guid: 275531d14b63ec9439bb89c41889a1ff, type: 3}
   - {fileID: 2800000, guid: cbd66979b56c7974ab74a4376cfaf057, type: 3}
+  secondChance: 0
+  dreaming: 0
 --- !u!1 &1152616101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,6 +3310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -3929,6 +3940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -4132,6 +4144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -4369,6 +4382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -4734,15 +4748,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Carddata:
-    name: "\uC6CC \uD504\uB810\uB958\uB4DC"
+    name: "\uBD88\uAE38\uD55C \uCC45"
     type: 2
-    atk: 3
-    hp: 3
-    cost: 3
-    effect: "\uB0B4 \uBAA8\uB4E0 \uC6A9\uBCD1, \uC544\uC774\uD15C\uCE74\uB4DC\uC758
-      \uC704\uB825, \uCCB4\uB825, \uC601\uC591\uC774 1 \uC99D\uAC00\uD55C\uB2E4.
-      \uB0B4 \uCE90\uB9AD\uD130\uCE74\uB4DC\uC758 \uC704\uB825\uC774 1 \uC99D\uAC00\uD55C\uB2E4."
-  number: 71
+    atk: 1
+    hp: 2
+    cost: 2
+    effect: "\uB0B4\uAC00 \uC8FC\uBB38\uCE74\uB4DC\uB97C \uC0AC\uC6A9\uD588\uC744
+      \uB54C, \uC774 \uCE74\uB4DC\uB97C \uD30C\uAD34\uD558\uACE0 \uADF8 \uC8FC\uBB38\uCE74\uB4DC\uB97C
+      \uC0AC\uC6A9 \uD6C4 \uB0B4 \uB371\uC73C\uB85C \uB418\uB3CC\uB9B0\uB2E4."
+  number: 85
 --- !u!114 &1604524910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4801,6 +4815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646447085}
   - component: {fileID: 1646447084}
+  - component: {fileID: 1646447086}
   m_Layer: 0
   m_Name: Deck
   m_TagString: Untagged
@@ -4824,6 +4839,7 @@ MonoBehaviour:
   slot: 8
   bosslist: 
   additionalDecklist: 
+  bossDecklist: 
 --- !u!4 &1646447085
 Transform:
   m_ObjectHideFlags: 0
@@ -4838,6 +4854,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1646447086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646447083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bf460391950d34d866776d27093ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thefloor: 0
+  Carddata:
+    name: 
+    type: 0
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
+  face_rem: {fileID: 2800000, guid: b04a7010de69dee42b3a27da1ab69d81, type: 3}
+  face_gae: {fileID: 2800000, guid: b6de5fc4fcd7e244c8a12c61afda3579, type: 3}
+  face_violet: {fileID: 2800000, guid: ad4a1a1a71459294d8ba4185fa25d8d6, type: 3}
+  number: 0
+  currentHP: 0
+  first: 0
+  second: 0
+  third: 0
+  selectingTime: 0
 --- !u!1 &1646986397
 GameObject:
   m_ObjectHideFlags: 0
@@ -4923,6 +4968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -5095,6 +5141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -5424,7 +5471,6 @@ GameObject:
   - component: {fileID: 1995325224}
   - component: {fileID: 1995325227}
   - component: {fileID: 1995325226}
-  - component: {fileID: 1995325225}
   - component: {fileID: 1995325228}
   m_Layer: 5
   m_Name: Face
@@ -5453,35 +5499,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1995325225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995325223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67bf460391950d34d866776d27093ef3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thefloor: 0
-  Carddata:
-    name: 
-    type: 0
-    atk: 0
-    hp: 0
-    cost: 0
-    effect: 
-  face_rem: {fileID: 2800000, guid: b04a7010de69dee42b3a27da1ab69d81, type: 3}
-  face_gae: {fileID: 2800000, guid: b6de5fc4fcd7e244c8a12c61afda3579, type: 3}
-  face_violet: {fileID: 2800000, guid: ad4a1a1a71459294d8ba4185fa25d8d6, type: 3}
-  number: 0
-  currentHP: 0
-  first: 0
-  second: 0
-  third: 0
-  selectingTime: 0
 --- !u!114 &1995325226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5615,6 +5632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -5787,6 +5805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisfield: 0
   isThischecked: 0
+  sunset: 0
   FieldData:
     name: 
     text: 
@@ -6151,6 +6170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4040045139107124386, guid: a8d47ddfcc1ba1747a40339077ace81e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5513108500753170589, guid: a8d47ddfcc1ba1747a40339077ace81e,
         type: 3}

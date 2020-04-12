@@ -9,9 +9,9 @@ public class selectFirst : MonoBehaviour
     public int whatcard3 = -1;
     public void selected1()
     {
-        whatcard1 = GameObject.Find("Face").GetComponent<whoandwhere>().first;
-        whatcard2 = GameObject.Find("Face").GetComponent<whoandwhere>().second;
-        whatcard3 = GameObject.Find("Face").GetComponent<whoandwhere>().third;
+        whatcard1 = GameObject.Find("Deck").GetComponent<whoandwhere>().first;
+        whatcard2 = GameObject.Find("Deck").GetComponent<whoandwhere>().second;
+        whatcard3 = GameObject.Find("Deck").GetComponent<whoandwhere>().third;
 
         GameObject.Find("Deck").GetComponent<deck>().Intodeck(whatcard1);
 
@@ -21,7 +21,10 @@ public class selectFirst : MonoBehaviour
         GameObject.Find("Deck").GetComponent<deck>().additionalDecklist.Add(whatcard2);
         GameObject.Find("Deck").GetComponent<deck>().additionalDecklist.Add(whatcard3);
 
-        GameObject.Find("Face").GetComponent<whoandwhere>().selectingTime = false;
+        GameObject.Find("Deck").GetComponent<whoandwhere>().selectingTime = false;
+
+        GameObject.Find("TrashOne").GetComponent<updownTrashlist>().updateyourlist();
+
         GameObject.Find("SelectOne").transform.SetAsFirstSibling();
     }
 }

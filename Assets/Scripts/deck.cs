@@ -10,9 +10,17 @@ public class deck : MonoBehaviour
     public List<int> additionalDecklist;
     public List<int> bossDecklist;
 
+    private static deck instance = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        
         decklist = new List<int>();
         bosslist = new List<int>();
         additionalDecklist = new List<int>();
@@ -22,6 +30,7 @@ public class deck : MonoBehaviour
         initialadd();
         initialbossdeck();
 
+        instance = this;
         DontDestroyOnLoad(this);
     }
 
@@ -138,6 +147,15 @@ public class deck : MonoBehaviour
     }
     void initialbossdeck()
     {
-
+        bossDecklist.Add(76);
+        bossDecklist.Add(77); bossDecklist.Add(77);
+        bossDecklist.Add(78); bossDecklist.Add(78);
+        bossDecklist.Add(79);
+        bossDecklist.Add(80); bossDecklist.Add(80); bossDecklist.Add(80);
+        bossDecklist.Add(81); bossDecklist.Add(81); bossDecklist.Add(81);
+        bossDecklist.Add(82); bossDecklist.Add(82); bossDecklist.Add(82);
+        bossDecklist.Add(83); bossDecklist.Add(83);
+        bossDecklist.Add(84);
+        bossDecklist.Add(85); bossDecklist.Add(85);
     }
 }

@@ -21,7 +21,7 @@ public class updownTrashlist : MonoBehaviour
             how_many_down += 1;
         updateyourlist();
     }
-    void updateyourlist()
+    public void updateyourlist()
     {
         for (int i = 0; i < slot; i++)
         {
