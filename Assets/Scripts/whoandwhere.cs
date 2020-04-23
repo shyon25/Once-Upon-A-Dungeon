@@ -44,11 +44,14 @@ public class whoandwhere : MonoBehaviour
 
     void Update()
     {
-        
     }
-
     
     void whoami()
+    {
+        makeYourFace();
+        LoadCardDataFromjson();
+    }
+    public void makeYourFace()
     {
         switch (GameObject.Find("ChosenCharacter").GetComponent<selectCharacter>().chara)
         {
@@ -65,7 +68,6 @@ public class whoandwhere : MonoBehaviour
                 number = 5;
                 break;
         }
-        LoadCardDataFromjson();
     }
 
     public void setMyHp()

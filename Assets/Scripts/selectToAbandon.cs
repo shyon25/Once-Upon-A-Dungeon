@@ -23,6 +23,7 @@ public class selectToAbandon : MonoBehaviour
             GameObject.Find("Deck").GetComponent<whoandwhere>().selectingTime = false;
             GameObject.Find("TrashOne").transform.SetAsFirstSibling();
             GameObject.Find("TrashOne").transform.GetChild(11).gameObject.SetActive(true);
+            GameObject.Find("EmptyField").GetComponent<fieldcards>().starry = false;
         }
         if(GameObject.Find("EmptyField").GetComponent<fieldcards>().secondChance == true)
             secondChance();

@@ -36,7 +36,6 @@ public class deck : MonoBehaviour
 
     void Update()
     {
-        decklist.Sort();
     }
 
     public void Intodeck(int a)

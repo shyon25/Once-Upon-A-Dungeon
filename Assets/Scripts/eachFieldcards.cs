@@ -272,6 +272,8 @@ public class eachFieldcards : MonoBehaviour
     }
     void starryGarden()
     {
+        GameObject.Find("EmptyField").GetComponent<fieldcards>().starry = true;
+        GameObject.Find("TrashOne").transform.GetChild(11).gameObject.SetActive(false);
         abandonCard();
         GameObject.Find("Deck").GetComponent<deck>().Intodeck(Random.Range(50,76));
     }

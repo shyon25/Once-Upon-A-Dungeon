@@ -19,6 +19,7 @@ public class fieldcards : MonoBehaviour
 
     public bool secondChance;
     public bool dreaming;
+    public bool starry;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class fieldcards : MonoBehaviour
         didyouchecklevel = false;
         secondChance = false;
         dreaming = false;
+        starry = false;
     }
     
     void Update()

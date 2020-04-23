@@ -27,6 +27,8 @@ public class showyourCharacterSeriously : MonoBehaviour
         {
             GameObject.Find("Deck").GetComponent<whoandwhere>().setFloor(GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor);
             GameObject.Find("Deck").GetComponent<whoandwhere>().setMyHp();
+            GameObject.Find("Deck").GetComponent<whoandwhere>().makeYourFace();
+            GameObject.Find("Deck").GetComponent<deck>().decklist.Sort();
         }
     }
 
