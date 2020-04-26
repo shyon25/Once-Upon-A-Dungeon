@@ -65,4 +65,24 @@ public class carddata
     public int hp;
     public int cost;
     public string effect;
+
+    public carddata()
+    {
+        name = "";
+        type = Type.CHARACTER;
+        atk = 0;
+        hp = 0;
+        cost = 0;
+        effect = "";
+    }
+
+    public carddata(carddata C)
+    {
+        name = C.name;
+        type = C.type;
+        atk = C.atk;
+        hp = C.hp;
+        cost = C.cost;
+        effect = C.effect;
+    }
 }

@@ -543,6 +543,8 @@ GameObject:
   - component: {fileID: 219049751}
   - component: {fileID: 219049753}
   - component: {fileID: 219049752}
+  - component: {fileID: 219049754}
+  - component: {fileID: 219049755}
   m_Layer: 5
   m_Name: CardZone4
   m_TagString: Untagged
@@ -603,6 +605,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219049750}
   m_CullTransparentMesh: 0
+--- !u!114 &219049754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219049750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &219049755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219049750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &220405093
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +647,8 @@ GameObject:
   - component: {fileID: 220405094}
   - component: {fileID: 220405096}
   - component: {fileID: 220405095}
+  - component: {fileID: 220405097}
+  - component: {fileID: 220405098}
   m_Layer: 5
   m_Name: CardZone5
   m_TagString: Untagged
@@ -674,6 +709,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220405093}
   m_CullTransparentMesh: 0
+--- !u!114 &220405097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220405093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &220405098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220405093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &254511024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,6 +1241,8 @@ GameObject:
   - component: {fileID: 479760824}
   - component: {fileID: 479760826}
   - component: {fileID: 479760825}
+  - component: {fileID: 479760827}
+  - component: {fileID: 479760828}
   m_Layer: 5
   m_Name: CardZone3
   m_TagString: Untagged
@@ -1235,6 +1303,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479760823}
   m_CullTransparentMesh: 0
+--- !u!114 &479760827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479760823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &479760828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479760823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &510497845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1665,27 @@ MonoBehaviour:
   handlist: 
   grave: 
   bossgrave: 
+  Board:
+    current_E:
+      name: 
+      type: 3
+      atk: 0
+      hp: 0
+      cost: 0
+      effect: 
+    current_P:
+      name: 
+      type: 3
+      atk: 0
+      hp: 0
+      cost: 0
+      effect: 
+    current_EF: []
+    current_PF: []
+    action_E: 0
+    action_P: 0
+    action_EF: 
+    action_PF: 
   Carddata:
     name: 
     type: 0
@@ -1585,6 +1705,8 @@ MonoBehaviour:
   how_many_boss_right: 0
   how_many_my_right: 0
   slot: 5
+  aiming: 0
+  attacker: 0
   card: {fileID: 3684295032188962535, guid: 902e5543f6af9b347acbce2c8d4c6f81, type: 3}
   cardZone: {fileID: 2800000, guid: 7c976d7815889fd468ba42052808088e, type: 3}
 --- !u!1 &627996866
@@ -1743,6 +1865,8 @@ GameObject:
   - component: {fileID: 703955903}
   - component: {fileID: 703955905}
   - component: {fileID: 703955904}
+  - component: {fileID: 703955906}
+  - component: {fileID: 703955907}
   m_Layer: 5
   m_Name: CardZone1
   m_TagString: Untagged
@@ -1803,6 +1927,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703955902}
   m_CullTransparentMesh: 0
+--- !u!114 &703955906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703955902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &703955907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703955902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +2343,8 @@ GameObject:
   - component: {fileID: 761433135}
   - component: {fileID: 761433137}
   - component: {fileID: 761433136}
+  - component: {fileID: 761433138}
+  - component: {fileID: 761433139}
   m_Layer: 5
   m_Name: CardZone2
   m_TagString: Untagged
@@ -2248,6 +2405,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761433134}
   m_CullTransparentMesh: 0
+--- !u!114 &761433138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761433134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &761433139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761433134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &770116657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,6 +2647,8 @@ GameObject:
   - component: {fileID: 820408419}
   - component: {fileID: 820408421}
   - component: {fileID: 820408420}
+  - component: {fileID: 820408422}
+  - component: {fileID: 820408423}
   m_Layer: 5
   m_Name: CardZone3
   m_TagString: Untagged
@@ -2519,6 +2709,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820408418}
   m_CullTransparentMesh: 0
+--- !u!114 &820408422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820408418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &820408423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820408418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &861654291
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,6 +3340,8 @@ RectTransform:
   - {fileID: 866531990}
   - {fileID: 879828605}
   - {fileID: 817386314}
+  - {fileID: 1974719875}
+  - {fileID: 1298304983}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3634,6 +3857,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293052088}
   m_CullTransparentMesh: 0
+--- !u!1 &1298304982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298304983}
+  - component: {fileID: 1298304985}
+  - component: {fileID: 1298304984}
+  m_Layer: 5
+  m_Name: MyLife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1298304983
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298304982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992933042}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.2, y: 0}
+  m_AnchorMax: {x: 0.25, y: 0.1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1298304984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298304982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1298304985
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298304982}
+  m_CullTransparentMesh: 0
 --- !u!1 &1333817160
 GameObject:
   m_ObjectHideFlags: 0
@@ -3687,6 +3987,8 @@ GameObject:
   - component: {fileID: 1565298488}
   - component: {fileID: 1565298490}
   - component: {fileID: 1565298489}
+  - component: {fileID: 1565298491}
+  - component: {fileID: 1565298492}
   m_Layer: 5
   m_Name: CardZone5
   m_TagString: Untagged
@@ -3747,6 +4049,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565298487}
   m_CullTransparentMesh: 0
+--- !u!114 &1565298491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565298487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1565298492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565298487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1629902892
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,6 +4450,8 @@ GameObject:
   - component: {fileID: 1890354597}
   - component: {fileID: 1890354599}
   - component: {fileID: 1890354598}
+  - component: {fileID: 1890354600}
+  - component: {fileID: 1890354601}
   m_Layer: 5
   m_Name: CardZone4
   m_TagString: Untagged
@@ -4177,6 +4512,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890354596}
   m_CullTransparentMesh: 0
+--- !u!114 &1890354600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890354596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1890354601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890354596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1901169998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,6 +4554,8 @@ GameObject:
   - component: {fileID: 1901169999}
   - component: {fileID: 1901170001}
   - component: {fileID: 1901170000}
+  - component: {fileID: 1901170002}
+  - component: {fileID: 1901170003}
   m_Layer: 5
   m_Name: CardZone2
   m_TagString: Untagged
@@ -4248,6 +4616,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901169998}
   m_CullTransparentMesh: 0
+--- !u!114 &1901170002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901169998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1901170003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901169998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1924500527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,6 +4735,8 @@ GameObject:
   - component: {fileID: 1935811155}
   - component: {fileID: 1935811157}
   - component: {fileID: 1935811156}
+  - component: {fileID: 1935811158}
+  - component: {fileID: 1935811159}
   m_Layer: 5
   m_Name: MyCharacterZone
   m_TagString: Untagged
@@ -4396,6 +4797,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935811154}
   m_CullTransparentMesh: 0
+--- !u!114 &1935811158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935811154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1935811159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935811154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
 --- !u!1 &1949202877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,6 +4839,8 @@ GameObject:
   - component: {fileID: 1949202878}
   - component: {fileID: 1949202880}
   - component: {fileID: 1949202879}
+  - component: {fileID: 1949202881}
+  - component: {fileID: 1949202882}
   m_Layer: 5
   m_Name: CardZone1
   m_TagString: Untagged
@@ -4466,6 +4900,114 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949202877}
+  m_CullTransparentMesh: 0
+--- !u!114 &1949202881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949202877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949202882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949202877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
+--- !u!1 &1974719874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974719875}
+  - component: {fileID: 1974719877}
+  - component: {fileID: 1974719876}
+  m_Layer: 5
+  m_Name: BossLife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1974719875
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974719874}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 992933042}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.2, y: 0.9}
+  m_AnchorMax: {x: 0.25, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1974719876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974719874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &1974719877
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974719874}
   m_CullTransparentMesh: 0
 --- !u!1 &2110777227
 GameObject:
@@ -4607,6 +5149,8 @@ GameObject:
   - component: {fileID: 2129202902}
   - component: {fileID: 2129202904}
   - component: {fileID: 2129202903}
+  - component: {fileID: 2129202905}
+  - component: {fileID: 2129202906}
   m_Layer: 5
   m_Name: EnemyCharacterZone
   m_TagString: Untagged
@@ -4667,3 +5211,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129202901}
   m_CullTransparentMesh: 0
+--- !u!114 &2129202905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129202901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbb9b0170593674c9f5ebc27ea4e3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2129202906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129202901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 929342b3a2439e240aae963eba8a1499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Carddata:
+    name: 
+    type: 3
+    atk: 0
+    hp: 0
+    cost: 0
+    effect: 
