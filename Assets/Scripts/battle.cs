@@ -39,11 +39,9 @@ public class battle : MonoBehaviour
     void Start()
     {
         deck = new List<int>(GameObject.Find("Deck").GetComponent<deck>().decklist);
-        //deck = ;
         shuffle(deck);
         addBossUniqueCard();
         bossdeck = new List<int>(GameObject.Find("Deck").GetComponent<deck>().bossDecklist);
-        //bossdeck = ;
         shuffle(bossdeck);
 
         handlist = new List<int>();
@@ -53,7 +51,7 @@ public class battle : MonoBehaviour
         field = new List<int>();
         Carddata = new carddata();
         LoadCardDataFromjson(GameObject.Find("Deck").GetComponent<whoandwhere>().number);
-        Board = new board(Carddata);
+        Board = new board();
 
         handlimit = 5;
         currentPhase = phase.start;
@@ -84,14 +82,16 @@ public class battle : MonoBehaviour
         Text EText = GameObject.Find("EnemyCharacterZone").transform.GetChild(0).GetComponent<Text>();
         Text MText = GameObject.Find("MyCharacterZone").transform.GetChild(0).GetComponent<Text>();
 
-        int currentBoss = GameObject.Find("Deck").GetComponent<deck>().bosslist[GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor];
+        int currentBoss = GameObject.Find("Deck").GetComponent<deck>().bosslist[GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor-1];
         LoadCardDataFromjson(currentBoss + 28);
         EText.text = Carddata.name + " " + Carddata.atk + " / " + Carddata.hp;
         Board.current_E = new carddata(Carddata);
+        Board.max_E = new carddata(Carddata);
         int currentP = GameObject.Find("Deck").GetComponent<whoandwhere>().number;
         LoadCardDataFromjson(currentP);
         MText.text = Carddata.name + " " + Carddata.atk + " / " + Carddata.hp;
         Board.current_P = new carddata(Carddata);
+        Board.max_P = new carddata(Carddata);
         Board.current_P.hp = GameObject.Find("Deck").GetComponent<whoandwhere>().currentHP;
     }
 
@@ -107,14 +107,14 @@ public class battle : MonoBehaviour
     void updateLife()
     {
         Text text = GameObject.Find("BossLife").GetComponent<Text>();
-        text.text = Board.current_E.hp.ToString();
+        text.text = Board.current_E.hp.ToString() + " / " + Board.max_E.hp.ToString();
         text = GameObject.Find("MyLife").GetComponent<Text>();
-        text.text = Board.current_P.hp.ToString();
+        text.text = Board.current_P.hp.ToString() + " / " + Board.max_P.hp.ToString();
     }
 
     void setBossField()
     {
-        for (int i = 0; i < Mathf.Min(bossfield.Count+how_many_boss_right, slot); i++)
+        for (int i = 0; i < Mathf.Min(bossfield.Count-how_many_boss_right, slot); i++)
         {
             LoadCardDataFromjson(bossfield[i + how_many_boss_right]);
             RawImage cardImage = GameObject.Find("EnemyCardZone").transform.GetChild(i).GetComponent<RawImage>();
@@ -123,7 +123,7 @@ public class battle : MonoBehaviour
             cardText.text = Carddata.name + " / " + Carddata.cost + " / " + Board.current_EF[i+how_many_boss_right].atk + " / " + Board.current_EF[i+how_many_boss_right].hp;
             //yield return new WaitForSeconds(0.01f);
         }
-        for (int i = bossfield.Count+how_many_boss_right; i < slot; i++)
+        for (int i = bossfield.Count-how_many_boss_right; i < slot; i++)
         {
             RawImage cardImage = GameObject.Find("EnemyCardZone").transform.GetChild(i).GetComponent<RawImage>();
             cardImage.texture = cardZone;
@@ -135,7 +135,7 @@ public class battle : MonoBehaviour
 
     void setField()
     {
-        for (int i = 0; i < Mathf.Min(field.Count,slot); i++)
+        for (int i = 0; i < Mathf.Min(field.Count-how_many_my_right,slot); i++)
         {
             LoadCardDataFromjson(field[i + how_many_my_right]);
             RawImage cardImage = GameObject.Find("MyCardZone").transform.GetChild(i).GetComponent<RawImage>();
@@ -144,7 +144,7 @@ public class battle : MonoBehaviour
             cardText.text = Carddata.name + " / " + Carddata.cost + " / " + Board.current_PF[i+how_many_my_right].atk + " / " + Board.current_PF[i+how_many_my_right].hp;
             //yield return new WaitForSeconds(0.01f);
         }
-        for (int i = field.Count; i < slot; i++)
+        for (int i = field.Count-how_many_my_right; i < slot; i++)
         {
             RawImage cardImage = GameObject.Find("MyCardZone").transform.GetChild(i).GetComponent<RawImage>();
             cardImage.texture = cardZone;
@@ -217,9 +217,15 @@ public class battle : MonoBehaviour
         Board.action_E = true;
         Board.action_P = true;
         for (int i = 0; i < Board.action_PF.Count; i++)
+        {
             Board.action_PF[i] = true;
+            Board.current_PF[i].hp = Board.max_PF[i].hp;
+        }
         for (int i = 0; i < Board.action_EF.Count; i++)
+        {
             Board.action_EF[i] = true;
+            Board.current_EF[i].hp = Board.max_EF[i].hp;
+        }
     }
 
     public void letsDraw()
@@ -261,7 +267,8 @@ public class battle : MonoBehaviour
         bossfield.Add(bossdeck[0]);
         LoadCardDataFromjson(bossdeck[0]);
         carddata Temp = new carddata(Carddata);
-        Board.current_EF.Add(Carddata);
+        Board.current_EF.Add(Temp);
+        Board.max_EF.Add(Temp);
         Board.action_EF.Add(true);
         bossdeck.RemoveAt(0);
         enemyField++;
@@ -279,27 +286,164 @@ public class battle : MonoBehaviour
     {
         if (currentPhase == phase.battle)
         {
+            enemyDone = false;
+            StartCoroutine("EnemyAttackTime");
             currentPhase = phase.end;
         }
     }
 
+    bool enemyDone = false;
+
+    IEnumerator EnemyAttackTime()
+    {
+        while (enemyDone == false)
+        {
+            enemyAttack();
+            yield return new WaitForSeconds(1f);
+        }
+        currentPhase = phase.start;
+        recover();
+    }
+    void enemyAttack()
+    {
+        int i = 0;
+        for (i = 0; i < bossfield.Count; i++)
+        {
+            if(Board.current_EF[i].type == Type.SPELL)
+            {
+                activateEnemySpell(i);
+            }
+        }
+
+        for (i = 0; i < bossfield.Count; i++)
+        {
+            if (i > slot)
+                how_many_boss_right += 1;
+            if(Board.action_EF[i] == true && Board.current_EF[i].type == Type.MERCENARY)
+            {
+                whoisMyRival(i+7);
+                break;
+            }
+            
+        }
+        if(i >= bossfield.Count)
+        {
+            whoisMyRival(6);
+            enemyDone = true;
+        }
+
+    }
+    void whoisMyRival(int attack)
+    {
+        int rival = 0;
+        
+        for (int i = 0; i < field.Count; i++)
+        {
+            if(Board.current_PF[i].type == Type.MERCENARY);
+            {
+                rival = i+1;
+                break;
+            }
+        }
+        if (field.Count == 0)
+        {
+            rival = 0;
+        }
+        fight(attack, rival);
+    }
+
+    void activateEnemySpell(int i)
+    {
+        bossfield.RemoveAt(i + how_many_boss_right);
+        Board.action_EF.RemoveAt(i + how_many_boss_right);
+        Board.current_EF.RemoveAt(i + how_many_boss_right);
+        Board.max_EF.RemoveAt(i + how_many_boss_right);
+    }
+
+    void attacklog(int attack, int defense)
+    {
+        string attacker = "";
+        string defenser = "";
+        switch (attack)
+        {
+            case 0:
+                LoadCardDataFromjson(GameObject.Find("Deck").GetComponent<whoandwhere>().number);
+                attacker = Carddata.name;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                LoadCardDataFromjson(field[attack - 1]);
+                attacker = Carddata.name;
+                break;
+            case 6:
+                LoadCardDataFromjson(GameObject.Find("Deck").GetComponent<deck>().bosslist[GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor-1] + 28);
+                attacker = Carddata.name;
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                LoadCardDataFromjson(bossfield[attack - 7]);
+                attacker = Carddata.name;
+                break;
+        }
+        switch (defense)
+        {
+            case 0:
+                LoadCardDataFromjson(GameObject.Find("Deck").GetComponent<whoandwhere>().number);
+                defenser = Carddata.name;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                LoadCardDataFromjson(field[defense - 1]);
+                defenser = Carddata.name;
+                break;
+            case 6:
+                LoadCardDataFromjson(GameObject.Find("Deck").GetComponent<deck>().bosslist[GameObject.Find("Deck").GetComponent<whoandwhere>().thefloor - 1] + 28);
+                defenser = Carddata.name;
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+                LoadCardDataFromjson(bossfield[defense - 7]);
+                defenser = Carddata.name;
+                break;
+        }
+
+        Debug.Log(attacker + "가 " + defenser + "를 공격.");
+    }
+
     public void fight(int attack, int defense)
     {
+        attacklog(attack, defense);
+        
         //내 캐릭터 = 0, 상대 캐릭터 = 6
         //내 필드 = 1~5, 상대 필드 = 7~11
         DataCall(attack);
         carddata A = new carddata(Carddata);
         DataCall(defense);
         carddata D = new carddata(Carddata);
-        before_effect_A(A, attack);
-        before_effect_D(D, defense);
+        before_effect_A(A, D, attack, defense);
+        before_effect_D(A, D, attack, defense);
 
         switch (attack)
         {
             case 0:
                 if (defense == 6)
                 {
-                    Board.current_E.hp -= Board.current_P.atk;
+                    int dice = Random.Range(1, 7);
+                    Debug.Log("Dice = " + dice);
+                    if (Board.current_P.atk >= dice)
+                        Board.current_E.hp -= 1;
                     if (Board.current_E.hp <= 0)
                         emergencyCall();
                 }
@@ -318,7 +462,10 @@ public class battle : MonoBehaviour
             case 5:
                 if (defense == 6)
                 {
-                    Board.current_E.hp -= Board.current_PF[attack - 1 + how_many_my_right].atk;
+                    int dice = Random.Range(1, 7);
+                    Debug.Log("Dice = " + dice);
+                    if (Board.current_PF[attack - 1 + how_many_my_right].atk >= dice)
+                        Board.current_E.hp -= 1;
                     if (Board.current_E.hp <= 0)
                         emergencyCall();
                 }
@@ -333,7 +480,11 @@ public class battle : MonoBehaviour
             case 6:
                 if (defense == 0)
                 {
-                    Board.current_P.hp -= Board.current_E.atk;
+                    int dice = Random.Range(1, 7);
+                    Debug.Log("Dice = " + dice);
+                    if (Board.current_E.atk >= dice)
+                        Board.current_P.hp -= Board.current_E.atk;
+
                     if (Board.current_P.hp <= 0)
                     {
                         Debug.Log("GameOver");
@@ -354,7 +505,11 @@ public class battle : MonoBehaviour
             case 11:
                 if (defense == 0)
                 {
-                    Board.current_P.hp -= Board.current_EF[attack - 7 + how_many_boss_right].atk;
+                    int dice = Random.Range(1, 7);
+                    Debug.Log("Dice = " + dice);
+                    if (Board.current_EF[attack - 7 + how_many_boss_right].atk >= dice)
+                        Board.current_P.hp -= 1;
+
                     if (Board.current_P.hp <= 0)
                     {
                         Debug.Log("GameOver");
@@ -370,12 +525,10 @@ public class battle : MonoBehaviour
                 break;
         }
 
-        
-
         if (D.hp > 0)
-            after_effect_D(D, defense);
+            after_effect_D(A, D, attack, defense);
         if (A.hp > 0)
-            after_effect_A(A, attack);
+            after_effect_A(A, D, attack, defense);
     }
     void destroyit(int defensed)
     {
@@ -383,6 +536,7 @@ public class battle : MonoBehaviour
         {
             field.RemoveAt(defensed - 1 + how_many_my_right);
             Board.current_PF.RemoveAt(defensed - 1 + how_many_my_right);
+            Board.max_PF.RemoveAt(defensed - 1 + how_many_my_right);
             Board.action_PF.RemoveAt(defensed - 1 + how_many_my_right);
             
         }
@@ -390,6 +544,7 @@ public class battle : MonoBehaviour
         {
             bossfield.RemoveAt(defensed - 7 + how_many_boss_right);
             Board.current_EF.RemoveAt(defensed - 7 + how_many_boss_right);
+            Board.max_EF.RemoveAt(defensed - 7 + how_many_boss_right);
             Board.action_EF.RemoveAt(defensed - 7 + how_many_boss_right);
             enemyField--;
         }
@@ -416,21 +571,43 @@ public class battle : MonoBehaviour
         LoadCardDataFromjson(yourCard);
     }
 
-    void before_effect_A(carddata attack, int a)
+    void before_effect_A(carddata attack, carddata defense, int a, int d)
+    {
+        switch (a)
+        {
+
+        }
+
+    }
+    void before_effect_D(carddata attack, carddata defense, int a, int d)
     {
 
     }
-    void before_effect_D(carddata defense, int d)
+    void after_effect_D(carddata attack, carddata defense, int a, int d)
     {
 
     }
-    void after_effect_D(carddata defense, int d)
+    void after_effect_A(carddata attack, carddata defense, int a, int d)
     {
+        switch (a)
+        {
+            case 0:
+                int myName = GameObject.Find("Deck").GetComponent<whoandwhere>().number;
 
-    }
-    void after_effect_A(carddata attack, int a)
-    {
+                switch (myName)
+                {
+                    case 0:
+                        rem();
+                        break;
+                }
 
+                break;
+        }
+
+        void rem()
+        {
+
+        }
     }
 
     //addcard
@@ -510,6 +687,7 @@ public class battle : MonoBehaviour
         LoadCardDataFromjson(thecard);
         carddata Temp = new carddata(Carddata);
         Board.current_PF.Add(Temp);
+        Board.max_PF.Add(Temp);
         Board.action_PF.Add(true);
     }
 }
@@ -520,16 +698,22 @@ public class board
     public carddata current_P;
     public List<carddata> current_EF;
     public List<carddata> current_PF;
+    public carddata max_E;
+    public carddata max_P;
+    public List<carddata> max_EF;
+    public List<carddata> max_PF;
 
     public bool action_E;
     public bool action_P;
     public List<bool> action_EF;
     public List<bool> action_PF;
 
-    public board(carddata P)
+    public board()
     {
         current_EF = new List<carddata>();
         current_PF = new List<carddata>();
+        max_EF = new List<carddata>();
+        max_PF = new List<carddata>();
 
         action_E = true;
         action_P = true;

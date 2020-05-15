@@ -106,7 +106,8 @@ public class activateCard : MonoBehaviour
             switch (position)
             {
                 case 6:
-                    yes = true;
+                    if(script.bossfield.Count <= 0)
+                        yes = true;
                     break;
                 case 7:
                 case 8:
@@ -125,9 +126,10 @@ public class activateCard : MonoBehaviour
     void activateSpell(int position)
     {
         battle script = GameObject.Find("BattleManager").GetComponent<battle>();
-        script.field.RemoveAt(position-1);
-        script.Board.action_PF.RemoveAt(position - 1);
-        script.Board.current_PF.RemoveAt(position - 1);
+        script.field.RemoveAt(position-1+script.how_many_my_right);
+        script.Board.action_PF.RemoveAt(position-1+script.how_many_my_right);
+        script.Board.current_PF.RemoveAt(position-1+ script.how_many_my_right);
+        script.Board.max_PF.RemoveAt(position - 1 + script.how_many_my_right);
     }
 
     void LoadCardDataFromjson(int number)
